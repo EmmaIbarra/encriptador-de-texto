@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <img class="header__logo" src="./sources/Logo1.png" alt="Logo de Alura">
+    </header>
+    <main class="presentacion">
+        <div class="presentacion__contenido">
+            <div class="presentacion__contenido__container">
+                <textarea id="texto" class="presentacion__contenido__container__texto"  placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            <div class="presentacion__contenido__down"> 
+                <div class="presentacion__contenido__down__letrero">
+                    <img class="presentacion__contenido__down__letrero__circulo" src="./sources/Group.png" >  
+                    <p class="presentacion__contenido__down__reglas"> Solo letras minúsculas y sin acento</p>   
+                </div>
+               
+                <div class="presentacion__contenido__down__botones">
+                    <button onclick="encriptar();" id="botonEncript" class="boton__encriptar">Encriptar</button>
+                    <button class="boton__desencriptar" >Desencriptar</button>
+                </div>
+            </div>
+        </div> 
+        
+        
+        <section class="presentacion__contenido__resultado" id="resultado">
+            <img class="presentacion__contenido__resultado__imagen" src="./sources/mono2.png" alt="Una persona mirando a través de una lupa">
+            <div class="presentacion__contenido__resultado__texto">
+                <h1 class="presentacion__contenido__resultado__titulo">Ningún mensaje fue encontrado</h1>
+                <p class="presentacion__contenido__resultado__parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+         
+        </section>
+
+
+
+
+
+
+        
+    </main>
+    <footer>
+        <p>
+    </footer>
+    <script src="ap.js"></script> 
+    
+</body>
+</html>
