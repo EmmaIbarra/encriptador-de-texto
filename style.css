@@ -164,11 +164,7 @@ body{
     
 }
 
-/*.boton__copiar__oculto{
-    display: none !important;
-}
-
-.boton__copiar__visible{
+.boton__copiar{
     border: 5px solid var(--tertiary-color);
     background-color: var(--tertiary-color);
     color: var(--quinary-color);
@@ -181,11 +177,9 @@ body{
     display: block;
 }
 
-.boton__copiar__visible:hover{
+.boton__copiar:hover{
     background-color: var(--secondary-color);
-}*/
-
-
+}
 
 .footer{
     width: 100%;
@@ -247,10 +241,10 @@ body{
         font-size: 1.5rem;
     }
 
-    /*.boton__copiar__visible{
+    .boton__copiar{
         font-size: 2rem;
         height: 5rem;
-    }*/
+    }
 }
 
 
@@ -307,10 +301,10 @@ body{
         font-size: 1.3rem;
     } 
 
-    /*.boton__copiar__visible{
+    .boton__copiar{
         font-size: 1.6rem;
-        max-width: 50rem;
-    }*/
+        width: 50%;
+    }
 
     .footer{
         font-size: 1.2rem;

@@ -39,26 +39,24 @@ function asignarTextoElemento(elemento, texto) {
    elementoHTML.innerHTML = texto;
 }
 
-function aplicarResultado(funcion, texto) {
+function aplicarResultado(funcion) {
    let textoOriginal = document.getElementById('texto').value;
    let textoResultado = funcion(textoOriginal);
    asignarTextoElemento('#resultado', textoResultado);
+   
    return textoResultado;
 }
 
-/*function copiarVisible() {
+function copiarVisible() {
    let button = document.getElementById('copiar');
-   let resultado = aplicarResultado();
-   if (resultado === aplicarResultado()) {
-      button.classList.remove('boton__copiar__oculto');
-      button.classList.add('boton__copiar__visible');
+   let resultado = document.getElementById('resultado');
+   
+   if (resultado.innerHTML !== "") {
+      button.style.display = 'block';
    } else {
-      button.classList.remove('boton__copiar__visible');
-      button.classList.add('boton__copiar__oculto');
+      button.style.display = 'none';
    }
-
 }
-copiarVisible();*/
 
 function cambiarFormatoResultado() {
    
@@ -74,9 +72,20 @@ function cambiarFormatoResultado() {
 document.getElementById('botonEncript').addEventListener('click',function() {
    aplicarResultado(encriptar);
    cambiarFormatoResultado();
+   copiarVisible();
+   
+   /*let cambioTexto = document.getElementById('resultado').textContent 
+   console.log(cambioTexto);*/
+   
 });
 
 document.getElementById('botonDesencript').addEventListener('click', function() {
    aplicarResultado(desencriptar);
    cambiarFormatoResultado();
+   copiarVisible();
 });
+
+document.getElementById('copiar').addEventListener('click', function() {
+   navigator.clipboard.writeText(document.getElementById('resultado').textContent);
+})
+
