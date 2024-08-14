@@ -1,36 +1,82 @@
+function encriptar(texto) {
+   let textoEncriptado = '';
+
+   for (let i = 0; i < texto.length; i++) {
+      switch (texto[i]) {
+         case 'a':
+            textoEncriptado += 'ai';
+            break;
+         case 'e':
+            textoEncriptado += 'enter';
+            break;
+         case 'i':
+            textoEncriptado += 'imes';
+            break;
+         case 'o':
+            textoEncriptado += 'ober';
+            break;
+         case 'u':
+            textoEncriptado += 'ufat';
+            break;
+         default:
+            textoEncriptado += texto[i];
+      }
+   }
+   return textoEncriptado;
+}
+
+function desencriptar(texto) {
+   let cambio = {ai: 'a', enter: 'e', imes: 'i', ober: 'o', ufat: 'u'};
+
+   let textoDesencriptado = texto.replace(/ai|enter|imes|ober|ufat/g, function(match) {
+      return cambio[match];
+   });
+   return textoDesencriptado;
+}
 
 function asignarTextoElemento(elemento, texto) {
    let elementoHTML = document.querySelector(elemento);
    elementoHTML.innerHTML = texto;
 }
 
-function encriptar() {
-   let textoUsuario = document.getElementById('texto').value;
-   let textoEnLista = textoUsuario.split('');
-   let nuevoTexto = [];
+function aplicarResultado(funcion, texto) {
+   let textoOriginal = document.getElementById('texto').value;
+   let textoResultado = funcion(textoOriginal);
+   asignarTextoElemento('#resultado', textoResultado);
+   return textoResultado;
+}
 
-   for (let i = 0; i < textoEnLista.length; i++) {
-      if (textoEnLista[i] == 'a') {
-         nuevoTexto.push('ai');
-         } else if (textoEnLista[i] == 'e') {
-            nuevoTexto.push('enter');
-            } else if (textoEnLista[i] == 'i') {
-               nuevoTexto.push('imes');
-               } else if (textoEnLista[i] == 'o') {
-                  nuevoTexto.push('ober');
-                  } else if (textoEnLista[i] == 'u') {
-                     nuevoTexto.push('ufat');
-                     } else {
-                        nuevoTexto.push(textoEnLista[i]);
-      
-      }
+/*function copiarVisible() {
+   let button = document.getElementById('copiar');
+   let resultado = aplicarResultado();
+   if (resultado === aplicarResultado()) {
+      button.classList.remove('boton__copiar__oculto');
+      button.classList.add('boton__copiar__visible');
+   } else {
+      button.classList.remove('boton__copiar__visible');
+      button.classList.add('boton__copiar__oculto');
    }
 
-   let textoEncriptado = nuevoTexto.join('');
-   return textoEncriptado;
+}
+copiarVisible();*/
+
+function cambiarFormatoResultado() {
+   
+   let contenedor = document.getElementById('resultado');
+   let resultadoActual = contenedor.innerHTML;
+   if (resultadoActual) {
+      contenedor.classList.add('resultado-recibido');
+   } else {
+      contenedor.classList.remove('resultado-recibido');
+   }
 }
 
 document.getElementById('botonEncript').addEventListener('click',function() {
-   let textoEncriptado = encriptar();
-   asignarTextoElemento('#resultado', textoEncriptado);
+   aplicarResultado(encriptar);
+   cambiarFormatoResultado();
+});
+
+document.getElementById('botonDesencript').addEventListener('click', function() {
+   aplicarResultado(desencriptar);
+   cambiarFormatoResultado();
 });
