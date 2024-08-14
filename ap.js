@@ -1,6 +1,5 @@
 function encriptar(texto) {
    let textoEncriptado = '';
-
    for (let i = 0; i < texto.length; i++) {
       switch (texto[i]) {
          case 'a':
@@ -27,7 +26,6 @@ function encriptar(texto) {
 
 function desencriptar(texto) {
    let cambio = {ai: 'a', enter: 'e', imes: 'i', ober: 'o', ufat: 'u'};
-
    let textoDesencriptado = texto.replace(/ai|enter|imes|ober|ufat/g, function(match) {
       return cambio[match];
    });
@@ -43,14 +41,12 @@ function aplicarResultado(funcion) {
    let textoOriginal = document.getElementById('texto').value;
    let textoResultado = funcion(textoOriginal);
    asignarTextoElemento('#resultado', textoResultado);
-   
    return textoResultado;
 }
 
 function copiarVisible() {
    let button = document.getElementById('copiar');
    let resultado = document.getElementById('resultado');
-   
    if (resultado.innerHTML !== "") {
       button.style.display = 'block';
    } else {
@@ -59,7 +55,6 @@ function copiarVisible() {
 }
 
 function cambiarFormatoResultado() {
-   
    let contenedor = document.getElementById('resultado');
    let resultadoActual = contenedor.innerHTML;
    if (resultadoActual) {
@@ -73,10 +68,6 @@ document.getElementById('botonEncript').addEventListener('click',function() {
    aplicarResultado(encriptar);
    cambiarFormatoResultado();
    copiarVisible();
-   
-   /*let cambioTexto = document.getElementById('resultado').textContent 
-   console.log(cambioTexto);*/
-   
 });
 
 document.getElementById('botonDesencript').addEventListener('click', function() {
