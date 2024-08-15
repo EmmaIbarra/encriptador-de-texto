@@ -22,9 +22,6 @@ Es también fácil de usar, gracias a una interfaz limpia y amigable que permite
 1. **Encriptar:** Ingresa el texto que deseas proteger en el campo de encriptación y haz clic en "Encriptar".
 2. **Desencriptar:** Si tienes un mensaje encriptado, pégalo en el campo de desencriptación y presiona "Desencriptar" para revelar el texto original.
 
-## Acceso al Proyecto
-Puedes acceder a Encriptador de Texto directamente desde [este enlace](https://tu-repositorio-github.com).
-
 ## Tecnologías Utilizadas
 - **JavaScript:** Implementación de la lógica de encriptación y desencriptación.
 - **HTML:** Estructura del contenido y diseño de la página.
