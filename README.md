@@ -4,8 +4,8 @@
 1. [Descripción del Proyecto](#descripción-del-proyecto)
 2. [Características Principales](#características-principales)
 3. [Cómo Usarlo](#cómo-usarlo)
-4. [Acceso al Proyecto](#acceso-al-proyecto)
-5. [Tecnologías Utilizadas](#tecnologías-utilizadas)
+4. [Tecnologías Utilizadas](#tecnologías-utilizadas)
+
 
 ## Descripción del Proyecto
 **Encriptador de Texto** es una herramienta web diseñada para proteger tu información personal o confidencial. Con esta aplicación, puedes encriptar cualquier texto y si necesitas recuperar el mensaje original, la desencriptación es tan sencilla como copiar y pegar.
