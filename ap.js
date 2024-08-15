@@ -32,6 +32,15 @@ function desencriptar(texto) {
    return textoDesencriptado;
 }
 
+function validarTexto(texto) {
+   const regex = /[A-ZÁÉÍÓÚáéíóú!@#$%^&*(),.?":{}|<>]/;
+   if (regex.test(texto)) {
+      alert("El texto contiene caracteres no permitidos");
+      return false;
+   }
+   return true;
+}
+
 function asignarTextoElemento(elemento, texto) {
    let elementoHTML = document.querySelector(elemento);
    elementoHTML.innerHTML = texto;
@@ -39,9 +48,13 @@ function asignarTextoElemento(elemento, texto) {
 
 function aplicarResultado(funcion) {
    let textoOriginal = document.getElementById('texto').value;
-   let textoResultado = funcion(textoOriginal);
-   asignarTextoElemento('#resultado', textoResultado);
-   return textoResultado;
+   if (validarTexto(textoOriginal)) {
+      let textoResultado = funcion(textoOriginal);
+      asignarTextoElemento('#resultado', textoResultado);
+   } else {
+      asignarTextoElemento('#resultado', ('Escriba todo en minuscula y sin acentos por favor'))
+   }
+   
 }
 
 function copiarVisible() {
