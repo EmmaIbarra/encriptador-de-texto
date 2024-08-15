@@ -78,5 +78,5 @@ document.getElementById('botonDesencript').addEventListener('click', function() 
 
 document.getElementById('copiar').addEventListener('click', function() {
    navigator.clipboard.writeText(document.getElementById('resultado').textContent);
-})
+});
 
